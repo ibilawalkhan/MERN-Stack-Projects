@@ -63,7 +63,7 @@ app.use("/posts", postRoutes);
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose
-  .connect('mongodb+srv://Bilawal:1234@cluster0.fzvzfa0.mongodb.net/test?retryWrites=true&w=majority')
+  .connect(dotenv.config.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
